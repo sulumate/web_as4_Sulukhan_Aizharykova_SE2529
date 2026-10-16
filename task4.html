@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An accessible, responsive registration form with Bootstrap validation and password confirmation.">
+  <title>Task 04 · Registration | Form Studio</title>
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/forms.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a class="brand" href="index.html" aria-label="Form Studio home">
+        <span class="brand-mark" aria-hidden="true">F</span>
+        <span class="brand-text">Form Studio<span class="brand-subtitle">ASSIGNMENT 04</span></span>
+      </a>
+      <div class="student-meta"><span>Sulukhan Aizharykova</span><span>SE-2529</span></div>
+    </div>
+    <nav class="site-container site-nav" aria-label="Assignment navigation">
+      <a class="nav-step" href="index.html">00 Contact</a>
+      <a class="nav-step" href="task1.html">01 HTML validation</a>
+      <a class="nav-step" href="task2.html">02 Bootstrap</a>
+      <a class="nav-step" href="task3.html">03 Feedback</a>
+      <a class="nav-step active" href="task4.html" aria-current="page">04 Registration</a>
+    </nav>
+  </header>
+
+  <main class="site-container" id="main-content" tabindex="-1">
+    <section class="page-intro" aria-labelledby="page-title">
+      <p class="eyebrow">PART 03 / REGISTRATION</p>
+      <h1 id="page-title">Make yourself at home.</h1>
+      <p class="intro-copy">Your details, your interests, your next beginning.</p>
+    </section>
+
+    <div class="workspace">
+      <aside class="context-panel" aria-labelledby="stage-title">
+        <p class="task-index">04</p>
+        <h2 id="stage-title">All the pieces, together.</h2>
+        <p>A complete registration form brings a clear layout and helpful validation into one place.</p>
+        <ul class="feature-list">
+          <li>A responsive Bootstrap grid.</li>
+          <li>Required fields and email validation.</li>
+          <li>Matching passwords of 8–72 characters.</li>
+          <li>Radio buttons, checkboxes, and a dropdown.</li>
+          <li>Feedback that updates as you edit.</li>
+          <li>Reset to start fresh.</li>
+        </ul>
+        <p class="context-note">Small details make a form easier to complete.</p>
+      </aside>
+
+      <section class="form-panel" aria-labelledby="form-title">
+        <div class="panel-heading">
+          <h2 id="form-title">Create your profile</h2>
+          <p>A few details to get you started.</p>
+        </div>
+        <p class="required-note"><span class="required-star">*</span> Required fields</p>
+
+        <!-- novalidate hides native popups; forms.js still checks HTML constraints. -->
+        <form id="registration-form" class="row g-3" data-demo-form data-validation="bootstrap" novalidate>
+          <div class="col-12"><h3 class="section-label">01 / Your details</h3></div>
+
+          <div class="col-md-6">
+            <label class="form-label" for="first-name">First name <span class="required-star">*</span></label>
+            <input class="form-control" type="text" id="first-name" name="firstName" autocomplete="given-name"
+              placeholder="Sulukhan" required minlength="2" maxlength="40" aria-describedby="first-name-feedback">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback" id="first-name-feedback">Enter your first name (2–40 characters).</div>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label" for="last-name">Last name <span class="required-star">*</span></label>
+            <input class="form-control" type="text" id="last-name" name="lastName" autocomplete="family-name"
+              placeholder="Aizharykova" required minlength="2" maxlength="40" aria-describedby="last-name-feedback">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback" id="last-name-feedback">Enter your last name (2–40 characters).</div>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label" for="email">Email address <span class="required-star">*</span></label>
+            <input class="form-control" type="email" id="email" name="email" autocomplete="email" inputmode="email"
+              spellcheck="false" placeholder="you@example.com" required maxlength="120" aria-describedby="email-help email-feedback">
+            <div class="valid-feedback">Email format looks good.</div>
+            <div class="invalid-feedback" id="email-feedback">Enter a valid email address.</div>
+            <div class="form-text" id="email-help">Use a complete email address, such as name@example.com.</div>
+          </div>
+
+          <div class="col-12"><h3 class="section-label">02 / Your password</h3></div>
+
+          <div class="col-md-6">
+            <label class="form-label" for="password">Password <span class="required-star">*</span></label>
+            <div class="password-wrap">
+              <input class="form-control" type="password" id="password" name="password" autocomplete="new-password"
+                placeholder="At least 8 characters" required minlength="8" maxlength="72" aria-describedby="password-help password-feedback">
+              <button class="password-toggle" type="button" data-toggle-password="password" aria-controls="password"
+                aria-label="Show password" aria-pressed="false">Show</button>
+              <div class="valid-feedback">Password length looks good.</div>
+              <div class="invalid-feedback" id="password-feedback">Use a password of 8–72 characters.</div>
+            </div>
+            <div class="form-text" id="password-help">Use 8–72 characters.</div>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label" for="confirm-password">Confirm password <span class="required-star">*</span></label>
+            <div class="password-wrap">
+              <input class="form-control" type="password" id="confirm-password" name="confirmPassword" autocomplete="new-password"
+                placeholder="Repeat your password" required minlength="8" maxlength="72" aria-describedby="confirm-password-feedback">
+              <button class="password-toggle" type="button" data-toggle-password="confirm-password" aria-controls="confirm-password"
+                aria-label="Show password" aria-pressed="false">Show</button>
+              <div class="valid-feedback">Passwords match.</div>
+              <div class="invalid-feedback" id="confirm-password-feedback">Repeat the same password.</div>
+            </div>
+          </div>
+
+          <div class="col-12"><h3 class="section-label">03 / A little about you</h3></div>
+
+          <div class="col-12">
+            <fieldset class="choice-fieldset">
+              <legend>Gender <span class="optional-label">Optional</span></legend>
+              <div class="choices">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="gender-female" value="female">
+                  <label class="form-check-label" for="gender-female">Female</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="gender-male" value="male">
+                  <label class="form-check-label" for="gender-male">Male</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="gender-private" value="prefer-not-to-say">
+                  <label class="form-check-label" for="gender-private">Prefer not to say</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="col-12">
+            <fieldset class="choice-fieldset" aria-describedby="hobbies-help">
+              <legend>Hobbies <span class="optional-label">Optional</span></legend>
+              <div class="choices">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="hobby-design" name="hobbies" value="design">
+                  <label class="form-check-label" for="hobby-design">Design</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="hobby-coding" name="hobbies" value="coding">
+                  <label class="form-check-label" for="hobby-coding">Coding</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="hobby-reading" name="hobbies" value="reading">
+                  <label class="form-check-label" for="hobby-reading">Reading</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="hobby-sports" name="hobbies" value="sports">
+                  <label class="form-check-label" for="hobby-sports">Sports</label>
+                </div>
+              </div>
+              <div class="form-text" id="hobbies-help">Choose as many as you like.</div>
+            </fieldset>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label" for="country">Country <span class="required-star">*</span></label>
+            <select class="form-select" id="country" name="country" autocomplete="country-name" required aria-describedby="country-feedback">
+              <option value="" selected>Select your country</option>
+              <option value="Kazakhstan">Kazakhstan</option>
+              <option value="Kyrgyzstan">Kyrgyzstan</option>
+              <option value="Uzbekistan">Uzbekistan</option>
+              <option value="Russia">Russia</option>
+              <option value="Türkiye">Türkiye</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="United States">United States</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback" id="country-feedback">Please select your country.</div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Create profile <span aria-hidden="true">↗</span></button>
+              <button class="btn btn-outline-secondary" type="reset">Reset</button>
+            </div>
+            <p class="privacy-note">Practice form — no account is created and your details are not sent or stored.</p>
+            <div class="form-status" id="form-status" role="status" aria-live="polite" hidden></div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-container footer-inner">
+      <p>Sulukhan Aizharykova · SE-2529</p>
+      <nav class="footer-nav" aria-label="Previous and next task">
+        <a href="task3.html">← Previous task</a>
+        <a href="index.html">Back to the beginning ↗</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

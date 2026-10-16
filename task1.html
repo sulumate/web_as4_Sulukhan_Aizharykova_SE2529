@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A contact form with required fields, email validation, and minimum and maximum text lengths.">
+  <title>Task 01 · HTML Validation | Form Studio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/forms.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a class="brand" href="index.html" aria-label="Form Studio home">
+        <span class="brand-mark" aria-hidden="true">F</span>
+        <span class="brand-text">Form Studio<span class="brand-subtitle">ASSIGNMENT 04</span></span>
+      </a>
+      <div class="student-meta">
+        <span>Sulukhan Aizharykova</span>
+        <span>SE-2529</span>
+      </div>
+    </div>
+    <nav class="site-container site-nav" aria-label="Assignment navigation">
+      <a class="nav-step" href="index.html">00 Contact</a>
+      <a class="nav-step active" href="task1.html" aria-current="page">01 HTML validation</a>
+      <a class="nav-step" href="task2.html">02 Bootstrap</a>
+      <a class="nav-step" href="task3.html">03 Feedback</a>
+      <a class="nav-step" href="task4.html">04 Registration</a>
+    </nav>
+  </header>
+
+  <main class="site-container" id="main-content" tabindex="-1">
+    <section class="page-intro" aria-labelledby="page-title">
+      <p class="eyebrow">PART 01 / HTML FORMS</p>
+      <h1 id="page-title">Make every input count.</h1>
+      <p class="intro-copy">A few helpful checks make it easier to leave a complete message.</p>
+    </section>
+
+    <div class="workspace">
+      <aside class="context-panel" aria-labelledby="stage-title">
+        <p class="task-index">01</p>
+        <h2 id="stage-title">Helpful boundaries.</h2>
+        <p>Built-in browser checks guide each answer before the form is submitted.</p>
+        <ul class="feature-list">
+          <li><code>required</code> prevents empty answers.</li>
+          <li><code>type="email"</code> checks the email format.</li>
+          <li><code>minlength</code> sets a minimum text length.</li>
+          <li><code>maxlength</code> limits the amount of text.</li>
+        </ul>
+      </aside>
+
+      <section class="form-panel" aria-labelledby="form-title">
+        <div class="panel-heading">
+          <h2 id="form-title">Contact us</h2>
+          <p>All fields are required.</p>
+        </div>
+
+        <form id="contact-form" class="plain-form" data-demo-form data-validation="native">
+          <div class="field-group">
+            <label for="name">Full name <span class="required-mark" aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required minlength="2" maxlength="60" aria-describedby="name-help">
+            <p id="name-help" class="field-help">Use 2–60 characters.</p>
+          </div>
+
+          <div class="field-group">
+            <label for="email">Email address <span class="required-mark" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" inputmode="email" spellcheck="false" required maxlength="120" aria-describedby="email-help">
+            <p id="email-help" class="field-help">Enter an email address, up to 120 characters.</p>
+          </div>
+
+          <div class="field-group">
+            <label for="message">Message <span class="required-mark" aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500" aria-describedby="message-help"></textarea>
+            <p id="message-help" class="field-help">Tell us more in 10–500 characters.</p>
+          </div>
+
+          <div class="form-actions">
+            <button class="primary-button" type="submit">Send message <span aria-hidden="true">↗</span></button>
+          </div>
+          <p class="privacy-note">Practice form — your message stays in this browser.</p>
+          <div id="form-status" class="form-status" role="status" aria-live="polite" hidden></div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-container footer-inner">
+      <p>Sulukhan Aizharykova · SE-2529</p>
+      <nav class="footer-nav" aria-label="Continue assignment">
+        <a class="task-prev" href="index.html"><span aria-hidden="true">←</span> Contact</a>
+        <a class="task-next" href="task2.html">Next: Bootstrap <span aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
